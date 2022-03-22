@@ -1,0 +1,25 @@
+This project is intended to model a practical problem: Task Management.
+Our purpose is to create an app to help people organize their tasks better.
+At first, we are going to restrict our users to "students". This collective is usually expected to keep records of tasks and eagers for a good user experience.
+
+Our MVP includes:
+
+* A Person sign up function(register);
+* A registered person can be a student in more than one institution
+* The relationship between student and institution is 1:1. Which means that although a Person can be a student in more than one institution, a student can only be associated with ONE institution. This will help segregate views for future features such as university/professor report.
+* Due to the differentiation between Person and "Student", students will be able to maintain their student data coherent throughout their student life. Besides, in the future it will be easier to maintain historical data from People.
+
+* Students will be able to create Tasks, and log time spent on them (Create).
+* They can also change status (Update) for these tasks based on a pre-determined list stored in "Status" table.
+* They can also delete tasks (delete). Deleted Tasks will not be visible to students anymore.
+* All information presented to the students will be provided through a View. This will prevent students from seeing others' activities. 
+
+* All update, create and delete commands on the Task entity will be logged automatically on a "Task Status Change" table. This will help keep tracks of the tasks, and also give us analytical information.
+* A custom function will summarize students information regarding a course(Print Report). Such as total tasks, total hours spent. This will be used when students want to summarize their courses info.
+
+* An upgraded version could be included to create another type of person, besides student: professors.
+* This Entity would be associated with an institution and would have read access to student tasks and Report.
+
+Separating the MVP this way would help future product development:
+Students could be "abstracted" into employees
+and Professors could be "abstracted" employees' customers.
