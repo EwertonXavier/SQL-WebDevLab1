@@ -1,0 +1,3 @@
+ /*TESTING VIEW- STUDENT id Options:n23231, n11111, n22221, n33311, n12121*/
+SET @student = "n33311";
+SELECT * FROM report;
