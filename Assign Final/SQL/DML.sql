@@ -1,3 +1,3 @@
- /*TESTING VIEW- STUDENT id Options:n23231, n11111, n22221, n33311, n12121*/
-SET @student = "n33311";
+ /*TESTING VIEW- Person Options:veve@test.com, ninini@test.com, dayday@test.com, dandan@test.com, larilari@test.com*/
+SET @person = "veve@test.com";
 SELECT * FROM report;

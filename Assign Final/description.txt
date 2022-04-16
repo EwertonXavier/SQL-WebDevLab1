@@ -15,7 +15,7 @@ Our MVP includes:
 * All information presented to the students will be provided through a Summary View. This will prevent students from seeing others' activities. 
 
 * All update, create and delete commands on the Task entity will be logged automatically on a "Task Status Change" table. This will help keep tracks of the tasks, and also give us analytical information.
-* A custom function will summarize all student tasks(REPORT). Such as tasks, hours spent. This will be used when students want to summarize their courses info.
+* A custom function(REPORT) will summarize all student tasks. Such as tasks, hours spent. This will be used when students want to summarize their courses info.
 
 Upgrade 1)
 An upgraded version could be included to create another type of person, besides student: professors.
