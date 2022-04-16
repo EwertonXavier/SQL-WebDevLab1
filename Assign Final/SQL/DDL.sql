@@ -1,3 +1,6 @@
+/*Drop procedures*/
+DROP PROCEDURE IF EXISTS cleanTasks;
+
 /*Drop VIEW*/
 /*Drop FUNCTIONS*/
 DROP FUNCTION IF EXISTS getPerson;
@@ -295,7 +298,15 @@ SET
     status_id = 3
 WHERE
     (id % 2) <>0;
-
+   
+/*Simulating a deletion made by user*/
+UPDATE
+	task2
+SET
+	status_id = 4
+WHERE
+	id=7;
+   
 /*Deleting a task to check trigger*/
 DELETE FROM task2 WHERE id = 1;
     
@@ -307,7 +318,7 @@ CREATE FUNCTION getPerson() RETURNS VARCHAR(200)
 
 /*Create View this view shows every task of a person (excluding deleted tasks)*/
 CREATE VIEW report AS
-  SELECT t.`description` as "task_description", t.due_date ,t.hours_spent, s.`description`as "status_description", i.name , s2.register_id  , c.`name` as "course_name",c.description as course_description 
+  SELECT   i.name as "Institution",  s2.register_id, c.`name` as "course_name",c.description as course_description, t.`description` as "task_description", s.`description`as "status_description" , t.due_date ,t.hours_spent 
   FROM task2 t 
     JOIN status s ON (t.status_id = s.id) 
     JOIN course c ON (c.id = t.course_id) 
@@ -321,13 +332,13 @@ SET @person = "dandan@test.com";
 SELECT * FROM report;
 
 /*Procedure*/
-
 DELIMITER //
 CREATE PROCEDURE cleanTasks ()
 BEGIN
   DELETE from task2
-  WHERE status = 4;
+  WHERE task2.status_id  = 4;
 END;
 //
 DELIMITER ;
 
+CALL cleanTasks;
