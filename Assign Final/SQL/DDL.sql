@@ -322,5 +322,12 @@ SELECT * FROM report;
 
 /*Procedure*/
 
-
+DELIMITER //
+CREATE PROCEDURE cleanTasks ()
+BEGIN
+  DELETE from task2
+  WHERE status = 4;
+END;
+//
+DELIMITER ;
 
